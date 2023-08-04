@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, Button, TouchableOpacity } from "react-native";
 
+
+//detstructing navigation here 
 const HomeScreen = ({ navigation}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -8,52 +10,56 @@ const HomeScreen = ({ navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>HomeScreen</Text>
+    <Text style={styles.text}>HomeScreen</Text>
+               
+               
+               {/**User Name and Password input forms START */}
+                <View style={styles.formContainer}>
+                    <TextInput
+                      style={styles.input}
+                      onChangeText={setUsername}
+                      value={username}
+                      placeholder="Username"
+                    />
 
-      <View style={styles.formContainer}>
-        <TextInput
-          style={styles.input}
-          onChangeText={setUsername}
-          value={username}
-          placeholder="Username"
-        />
+                    <TextInput
+                      style={styles.input}
+                      onChangeText={setPassword}
+                      value={password}
+                      placeholder="Password"
+                      secureTextEntry
+                    />
 
-        <TextInput
-          style={styles.input}
-          onChangeText={setPassword}
-          value={password}
-          placeholder="Password"
-          secureTextEntry
-        />
+                    <Button title="Log In" onPress={() => {/* your login logic here */}} />
 
-        <Button title="Log In" onPress={() => {/* your login logic here */}} />
-
-        <View style={styles.forgotPasswordContainer}>
-          <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-        </View>
-      </View>
-
+                    <View style={styles.forgotPasswordContainer}>
+                      <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                    </View>
+                </View>
+       {/**User Name and Password input forms END */}
+      
+      
       {/* BUTTONS START  */}
       <View style={styles.buttonsContainer}>
-                <View style={styles.buttonContainer}>
+                  <View style={styles.buttonContainer}>
                   <TouchableOpacity
                     style={styles.button}
                     onPress={() => navigation.navigate("Components")}
                   >
                     <Text style={styles.buttonText}>Go to Components Screen</Text>
                   </TouchableOpacity>
-                </View>
+                  </View>
 
-                <View style={styles.buttonContainer}>
+                  <View style={styles.buttonContainer}>
                   <TouchableOpacity
                     style={styles.button}
                     onPress={() => navigation.navigate("List")}
                   >
                     <Text style={styles.buttonText}>Go to List Screen</Text>
                   </TouchableOpacity>
-                </View>
+                  </View>
 
-                <View style={styles.buttonContainer}>
+                  <View style={styles.buttonContainer}>
                     <TouchableOpacity
                       style={styles.button}
                       onPress={() => navigation.navigate("Imagescreen")}
@@ -61,7 +67,32 @@ const HomeScreen = ({ navigation}) => {
                       <Text style={styles.buttonText}>Go to Image Screen</Text>
                     </TouchableOpacity>
                   </View>
-      </View>
+
+
+                  <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={() => navigation.navigate("Counter")}
+                    >
+                      <Text style={styles.buttonText}>Go to Counter Screen</Text>
+                    </TouchableOpacity>
+                  </View>
+
+
+                  <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={() => navigation.navigate("Colors")}
+                    >
+                      <Text style={styles.buttonText}>Go to Colors Screen</Text>
+                    </TouchableOpacity>
+                  </View>
+
+
+
+
+
+        </View>
       
       
       {/* Buttons END */}

@@ -8,9 +8,23 @@ const ImageScreen = () => {
     
         <View>
 
-            <ImageDetail title="Forest" imagesource={require('../../assets/beach.jpg')} />
-            <ImageDetail title="Beach" imagesource={require('../../assets/forest.jpg')} />
-            <ImageDetail title="Mountain" imagesource={require('../../assets/mountain.jpg')}/>
+            <ImageDetail 
+                title="Forest" 
+                imageScore={9} 
+                imageSource={require('../../assets/beach.jpg')}
+             />
+
+            <ImageDetail 
+                title="Beach" 
+                imageScore={7} 
+                imageSource={require('../../assets/forest.jpg')} 
+            />
+
+            <ImageDetail 
+                title="Mountain" 
+                imageScore={4} 
+                imageSource={require('../../assets/mountain.jpg')}
+            />
 
          </View>
     );
